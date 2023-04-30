@@ -28,7 +28,9 @@ void SPI_Config(NRF24_t * dev){
 		.quadhd_io_num = -1
 	};
 
-	ret = spi_bus_initialize( SPI2_HOST, &spi_bus_config, SPI_DMA_CH_AUTO );
+	ret = spi_bus_initialize( SPI2_HOST, &spi_bus_config, 0 );
+	// ret = spi_bus_initialize( SPI2_HOST, &spi_bus_config);
+
 	ESP_LOGI(TAG, "spi_bus_initialize=%d",ret);
 
 	spi_device_interface_config_t devcfg;

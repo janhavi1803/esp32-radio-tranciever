@@ -34,7 +34,9 @@ esp_err_t spi_config(){
         // .max_transfer_sz = 32,
     };
 
-    ret =  spi_bus_initialize(SPI2_HOST, &buscfg, SPI_DMA_CH_AUTO);
+    ret =  spi_bus_initialize(SPI2_HOST, &buscfg, 0);
+// ret =  spi_bus_initialize(SPI2_HOST, &buscfg, SPI_DMA_CH_AUTO);
+    // ret =  spi_bus_initialize(SPI2_HOST, &buscfg);
     if (ret == ESP_OK){
         ESP_LOGI(TAG, "Bus Config Done RET: %d", ret);
     }
